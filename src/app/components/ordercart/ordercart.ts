@@ -28,6 +28,13 @@ export class Ordercart {
   }
 
   initFawryPayPayment() {
+    const chargeItems = this.cart.map(item => ({
+      itemId: item.id,
+      description: item.description,
+      price: item.price,
+      quantity: item.quantity || 1,
+      imageUrl: item.imageUrl || ''
+    }));
     const chargeRequest = {
       merchantCode: 'dJWmdV+lPIE=',
       merchantRefNum: '2312465464',
@@ -36,22 +43,7 @@ export class Ordercart {
       customerName: 'Customer Name',
       customerProfileId: '1212',
       paymentExpiry: '1631138400000',
-      chargeItems: [
-        {
-          itemId: '6b5fdea340e31b3b0339d4d4ae5',
-          description: 'Product Description',
-          price: 50.00,
-          quantity: 2,
-          imageUrl: 'https://developer.fawrystaging.com/photos/45566.jpg',
-        },
-        {
-          itemId: '97092dd9e9c07888c7eef36',
-          description: 'Product Description',
-          price: 75.25,
-          quantity: 3,
-          imageUrl: 'https://developer.fawrystaging.com/photos/639855.jpg',
-        },
-      ],
+      chargeItems: chargeItems,
       returnUrl: 'https://developer.fawrystaging.com', //my app url #TODO
       authCaptureModePayment: false,
       signature: "2ca4c078ab0d4c50ba90e31b3b0339d4d4ae5b32f97092dd9e9c07888c7eef36"
