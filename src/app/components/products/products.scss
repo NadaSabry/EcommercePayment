@@ -1,0 +1,89 @@
+@use '../../../variables' as *;
+
+h2{
+  font-weight: bold;
+  font-size: xx-large;
+}
+.price{
+    font-weight: bold;
+    font-size: 1.15em;
+    color: $dark-red;
+}
+.btn{
+   border-radius: 50px;
+   width: 160px;
+   height: 40px;
+   font-weight: bold;
+   box-sizing: 1px;
+}
+.btn-cart{  
+   background-color: #fffffd;
+   border-color: #c83b0e;
+}
+.btn-cart:hover{
+   background-color:$base-color;
+}
+.button-center,.card {
+  display: flex;
+  justify-content: center;
+}
+.btn-quantity-cart{
+   background-color: #c83b0e;
+   display: flex ;
+   justify-content: space-around;
+   align-items: center ;
+   border-radius: 50px;
+   width: 160px;
+   height: 40px;
+   font-weight: bold;
+   box-sizing: 1px;
+   color: white;
+}
+.btn-count {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn-count:hover {
+    background-color: white;
+    color: #c83b0e;
+    cursor: pointer;
+}
+
+.bi {
+  color: white;
+  font-size: 20px;
+  display: inline-flex; // Use flex for perfect centering
+  align-items: center;
+  justify-content: center;
+  width: 22px;   // Set width and height to the same value
+  height: 22px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bi-plus-circle, .bi-dash-circle {
+  background-color: transparent;
+}
+
+.bi-plus-circle:hover, .bi-dash-circle:hover {
+  background-color: white;
+  color: $dark-red;
+  cursor: pointer;
+}
+
+.card-title{
+  color: #bbaca9;
+  font-size: 15px;
+  font-weight: 500;
+}
+.card-description{
+  color: #352a29;
+  font-weight: bold;
+  font-size: large;
+}

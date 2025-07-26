@@ -1,0 +1,97 @@
+@use '../../../variables.scss' as *;
+
+.container {
+    border-radius: 10px;
+    background-color: white;
+}
+
+h4 {
+    color: $dark-red;
+    font-weight: 600;
+    font-weight: bold;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $title-color;
+}
+
+.bi-x-circle {
+    font-size: 20px;
+}
+
+.product-body {
+    color: $p-color;
+}
+
+.quantity {
+    color: $dark-red;
+    font-weight: 600;
+    padding-right: 3PX;
+}
+
+.result {
+    font-weight: 600;
+}
+
+hr {
+    color: $p-color ;
+}
+
+.total {
+    color: $title-color;
+    font-size: 18px;
+}
+
+.totalAmount {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.btn-pay {
+    background-color: $dark-red;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    //height: 40px;
+    padding: 10px 0px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+    &:hover,
+    &:focus {
+        background-color: #a8320c;
+        color: white;
+        box-shadow: 0 4px 16px rgba(200, 59, 14, 0.15);
+        outline: none;
+        cursor: pointer;
+    }
+}
+.btn-pay:hover{
+    cursor: pointer;
+}
+.fawry-btn{
+    background-color: #006B99;
+}
+.fawry-btn:hover {
+  background-color: #00557a; /* darker hover color */
+}
+.empty-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.img-empty{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.text-empty{
+    color: $p-color;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}

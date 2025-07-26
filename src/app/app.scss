@@ -1,0 +1,7 @@
+
+@use '../variables.scss' as *;
+
+.main-content {
+  background-color: $base-color;
+  min-height: 100vh;
+}

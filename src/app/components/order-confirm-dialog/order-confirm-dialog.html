@@ -1,0 +1,26 @@
+<div class="container p-5">
+    <img class="img-empty" src="Images/icon-order-confirmed.svg" alt="Empty Cart">
+    <div class="title">Order Confirmed</div>
+    <p class="normal-text">We hope you enjoy your food!</p>
+    <div class="order p-2">
+        @for(item of data.products; track item.id) {
+        <div class="item-row">
+            <div class="item-info">
+                <img [src]="'Images/' + item.imageUrl" alt="Tiramisu" class="item-img">
+                <div class="item-details">
+                    <div><strong>{{item.name}}</strong></div>
+                    <small><span class="item-quantity">{{item.quantity}}</span> {{'@'}} {{item.price |
+                        currency}}</small>
+                </div>
+            </div>
+            <div class="item-price">{{item.price * (item.quantity||0) | currency }}</div>
+        </div>
+        <hr>
+        }
+        <div class="total d-flex justify-content-between">
+            <div>Order Total</div>
+            <div class="totalAmount">{{data.totalAmount | currency}}</div>
+        </div>
+    </div>
+    <a class="btn btn-pay" (click)="closeDialog()">Start New Order</a>
+</div>

@@ -1,0 +1,28 @@
+<div class="container p-4 my-3">
+    <h4 class="pd-3">Your Cart ({{cart.length}})</h4>
+    <div *ngIf="cart.length > 0" class="receipt">
+        <div *ngFor="let pro of cart;" class="products">
+            <div class="product-title py-2">{{pro.name}} </div>
+            <div class="product-body d-flex justify-content-between">
+                <div> <span class="quantity"> {{pro.quantity}}x </span>
+                    {{'@'}} {{pro.price | currency }}
+                    <span class="result">{{pro.price * (pro.quantity||0) | currency }}</span>
+                </div>
+                <div><i class="bi bi-x-circle"></i></div>
+            </div>
+            <hr>
+        </div>
+        <div class="total d-flex justify-content-between">
+            <div>Order Total</div>
+            <div class="totalAmount">{{cartTotal | currency}}</div>
+        </div>
+        <a class="btn btn-pay fawry-btn mt-4 mb-2" (click)="initFawryPayPayment()">Pay with Fawry</a>
+        <a class="btn btn-pay" (click)="initkedaPayPayment()">Pay with Keda</a>
+    </div>
+
+    <!-- Emppty cart -->
+     <div *ngIf="cart.length == 0" class="empty-cart">
+        <img class="img-empty" src="Images/illustration-empty-cart.svg" alt="Empty Cart">
+        <p class="text-center text-empty">Your added items will appear here</p>
+     </div>
+</div>
