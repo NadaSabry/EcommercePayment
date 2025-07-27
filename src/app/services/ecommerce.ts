@@ -10,7 +10,7 @@ import { InitPaymentRequestDTO } from '../models/initPaymentDto';
 export class Ecommerce {
   constructor(private https:HttpClient) {}
 
-  API_URL = 'https://localhost:7151/api';
+  API_URL = 'http://sweete-commerce.somee.com/api';
 
   getProducts():Observable<ProductDto[]> { 
     return this.https.get<ProductDto[]>(`${this.API_URL}/Product`);
