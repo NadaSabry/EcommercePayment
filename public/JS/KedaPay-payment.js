@@ -7,7 +7,7 @@ if (!origin) {
 
 // vaiables for kedapay api
 const kedaplugin_frame_div_id = 'keda-payments';
-const kedapay_api_base_url = "https://localhost:7151/api";
+const kedapay_api_base_url = "http://sweete-commerce.somee.com"//"https://localhost:7151/api";
 const keda_plugin_origin = "https://interactive-card-details-ecru.vercel.app";
 
 
