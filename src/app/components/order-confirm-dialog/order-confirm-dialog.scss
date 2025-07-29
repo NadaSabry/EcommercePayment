@@ -2,6 +2,9 @@
 .container{
     max-height: 90vh;
     width: 500px;
+    @media (max-width: 550px) {
+        width: 90%;
+    }
     overflow-y: auto;
 }
 .title{
