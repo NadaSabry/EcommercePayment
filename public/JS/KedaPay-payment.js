@@ -161,7 +161,7 @@ eventListener(keda_messageEvent, keda_receiveMessage, false);
 
 function keda_receiveMessage(message) {
 	//debugger;
-	if (message.origin === pluginOrigin) {
+	if (message.origin === keda_plugin_origin) {
 		// message dispatched from the target origin
 		document.getElementById(kedaplugin_frame_div_id)?.remove();
 
