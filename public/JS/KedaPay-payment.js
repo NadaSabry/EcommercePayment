@@ -2,7 +2,7 @@
 let origin = window.localStorage.getItem("fp-plugin-origin");
 if (!origin) {
 	origin = window.location.origin;
-	console.log('Overriding origin with ' + origin);
+	//console.log('Overriding origin with ' + origin);
 }
 
 // vaiables for kedapay api
@@ -23,7 +23,7 @@ class KedaPay {
 	//1- checkout function to start payment process
     static checkout(chargeRequest, config, accessToken) {
 		//debugger;
-		console.log(chargeRequest, config, "-------------------");
+		//console.log(chargeRequest, config, "-------------------");
 		config.returnUrl = chargeRequest.returnUrl;
 		KedaPay.config = config;
 
@@ -61,14 +61,14 @@ class KedaPay {
 		//2- returned : parmeter id with (transaction	ID) to retreve user data from api 
 		fetch(`/api/proxy-product`, params)
 			.then(response => {
-				if (!response.ok) { console.log("error", response); throw response; }
+				if (!response.ok) {  throw response; }
 				return response.text();
 			})
 			.then(paymentId => {
 				KedaPay.loadPlugin(paymentId, config);
 			})
 			.catch(error => {
-				console.log("error , failed aweeee", error);
+				//console.log("error , failed aweeee", error);
 				div.innerHTML = null
 				if (typeof error.json === "function") {
 					error.json()
@@ -188,7 +188,7 @@ function onSuccessCallBack(data) {
 function onFailureCallBack(data) {
 	//debugger;
 	if (KedaPay.config) {
-		console.log("onFailureCallBack", data);
+		//console.log("onFailureCallBack", data);
 		KedaPay.config.onFailure
 			? KedaPay.config.onFailure(data)
 			: (window.location.href = KedaPay.config.returnUrl + mapToUrlParams(data));

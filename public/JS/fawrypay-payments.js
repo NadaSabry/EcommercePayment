@@ -19,7 +19,7 @@ const DISPLAY_MODE = {
 class FawryPay {
 	static checkout(chargeRequest, config, accessToken) {
 		//debugger;
-		console.log(chargeRequest, config, "-------------------");
+		//console.log(chargeRequest, config, "-------------------");
 		config.returnUrl = chargeRequest.returnUrl;
 		FawryPay.config = config;
 
@@ -180,7 +180,6 @@ function onSuccessCallBack(data) {
 function onFailureCallBack(data) {
 	//debugger;
 	if (FawryPay.config) {
-		console.log("onFailureCallBack", data);
 		FawryPay.config.onFailure
 			? FawryPay.config.onFailure(data)
 			: (window.location.href = FawryPay.config.returnUrl + mapToUrlParams(data));
