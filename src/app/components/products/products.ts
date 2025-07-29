@@ -12,7 +12,7 @@ import { CartService } from '../../services/cart/cart-service';
 })
 export class Products implements OnInit {
 
-  constructor(private ecommerceService: Ecommerce, private _catService: CartService) { }
+  constructor(private ecommerceService: Ecommerce, public _catService: CartService) { }
   products: ProductDto[] = [];
 
   ngOnInit() {

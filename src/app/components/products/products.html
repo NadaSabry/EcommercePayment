@@ -1,7 +1,7 @@
 <div class="container">
     <h2 class="py-2">Desserts</h2>
     <div class="row g-5">
-        @for(product of products; track product.id ) {
+        @for(product of _catService.cart(); track product.id ) {
         <div class="col-md-6 col-lg-4">
             <div class="card" style="width: 100%;">
                 <!-- <img class="card-img-top" src="Images/card-image.svg" alt="Card image cap"> -->
