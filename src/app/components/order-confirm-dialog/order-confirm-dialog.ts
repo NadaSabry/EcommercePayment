@@ -19,6 +19,6 @@ export class OrderConfirmDialog {
 
   closeDialog() {
     this.dialogRef.close();
-    this.cartService.clearCart();
+    //this.cartService.clearCart();
   }
 }
