@@ -2,8 +2,10 @@
 .container{
     max-height: 90vh;
     width: 500px;
+    padding: 48px;
     @media (max-width: 550px) {
-        width: 90%;
+        width: 95%;
+        padding: 24px;
     }
     overflow-y: auto;
 }

@@ -115,13 +115,13 @@ export class Ordercart {
   }
 
 
-  // onSuccessPayment() {
-  //   console.log('Payment successful:', this.finalResult);
-  //   // Handle successful payment logic here, e.g., redirect to order confirmation page
-  //   const dialogRef = this.dialog.open(OrderConfirmDialog, {
-  //     data: { orderId: 3, products: this.cart, totalAmount: this.cartTotal }
-  //   });
-  // }
+  onSuccessPayment() {
+    console.log('Payment successful:', this.finalResult);
+    // Handle successful payment logic here, e.g., redirect to order confirmation page
+    const dialogRef = this.dialog.open(OrderConfirmDialog, {
+      data: { orderId: 3, products: this.cart, totalAmount: this.cartTotal }
+    });
+  }
 }
 
 const DISPLAY_MODE = {
