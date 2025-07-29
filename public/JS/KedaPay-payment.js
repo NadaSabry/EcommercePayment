@@ -59,7 +59,7 @@ class KedaPay {
 		// make post request for init payment with
 		//1- body : is the user data
 		//2- returned : parmeter id with (transaction	ID) to retreve user data from api 
-		fetch(`${kedapay_api_base_url}/Order/init`, params)
+		fetch(`/api/proxy-product`, params)
 			.then(response => {
 				if (!response.ok) { console.log("error", response); throw response; }
 				return response.text();
