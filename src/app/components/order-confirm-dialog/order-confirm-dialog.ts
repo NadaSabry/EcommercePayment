@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CartService } from '../../services/cart/cart-service';
 
 
 @Component({
@@ -12,9 +13,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class OrderConfirmDialog {
 
   readonly data = inject<any>(MAT_DIALOG_DATA);
-  constructor(private dialogRef: MatDialogRef<OrderConfirmDialog>) { }
+  constructor(private dialogRef: MatDialogRef<OrderConfirmDialog>,
+    private cartService:CartService
+  ) { }
 
   closeDialog() {
     this.dialogRef.close();
+    this.cartService.clearCart();
   }
 }
