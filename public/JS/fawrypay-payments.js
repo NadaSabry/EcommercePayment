@@ -9,8 +9,6 @@ const fawry_plugin_origin = "https://atfawry.fawrystaging.com";
 const fawryplugin_deploy_path = "/atfawry/plugin/";
 const fawryplugin_frame_div_id = 'fawry-payments';
 
-const pluginOrigin = "https://interactive-card-details-ecru.vercel.app"
-
 const DISPLAY_MODE = {
 	POPUP: 'POPUP',
 	INSIDE_PAGE: 'INSIDE_PAGE',

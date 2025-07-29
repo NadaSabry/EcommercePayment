@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     if (req.method === 'GET') {
       targetUrl = `${baseUrl}/Product`;
     } else if (req.method === 'POST') {
-      targetUrl = `${baseUrl}/Payment/init`;
+      targetUrl = `${baseUrl}/Order/init`;
       const body = req.body;
       fetchOptions.body = JSON.stringify(body);
     } else {
